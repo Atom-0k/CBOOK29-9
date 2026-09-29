@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuaderno Digital</title>
+    {% for css_path in react_css %}
+    <link rel="stylesheet" href="{% static css_path %}">
+    {% endfor %}
+</head>
+<body>
+    <div id="root"></div>
+
+   {{ horario_dias|json_script:"horario-data" }}
+   {{ asignaciones|json_script:"asignaciones-data" }}
+   {{ roles|json_script:"roles-data" }}
+   {{ notas_alumno|json_script:"notas-alumno-data" }}
+<script>
+  window.__CUADERNO_USER__ = {
+    nombre: "{{ usuario.nombres }} {{ usuario.apellido }}",
+    curso: "{{ curso_legible }}",
+    cursoCodigo: "{{ usuario.curso }}",
+    gmail: "{{ usuario.gmail }}",
+    iniciales: "{{ usuario.nombres|slice:':1'|upper }}{{ usuario.apellido|slice:':1'|upper }}",
+    roles: JSON.parse(document.getElementById('roles-data').textContent)
+  };
+  window.__CUADERNO_HORARIO__ = JSON.parse(document.getElementById('horario-data').textContent);
+  window.__CUADERNO_ASIGNACIONES__ = JSON.parse(document.getElementById('asignaciones-data').textContent);
+  window.__CUADERNO_NOTAS__ = JSON.parse(document.getElementById('notas-alumno-data').textContent);
+</script>
+<script type="module" src="{% static react_js %}"></script>
+</body>
+</html>

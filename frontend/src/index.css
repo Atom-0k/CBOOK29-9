@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.dark {
+  color-scheme: dark;
+}
+
+.scroll-slide {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #14b8a6 transparent;
+  padding-bottom: 2px;
+}
+.scroll-slide::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-slide::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-slide::-webkit-scrollbar-thumb {
+  background-color: #14b8a6;
+  border-radius: 9999px;
+}
+.dark .scroll-slide::-webkit-scrollbar-thumb {
+  background-color: #2dd4bf;
+}
