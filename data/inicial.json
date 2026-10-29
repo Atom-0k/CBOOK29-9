@@ -1,0 +1,12 @@
+[
+  {
+    "titulo": "Mi primera nota",
+    "contenido": "Este es un ejemplo de dato en MongoDB",
+    "fecha": "2026-04-16"
+  },
+  {
+    "titulo": "Configuración Django",
+    "contenido": "Ya conecté el entorno virtual y cargué los requerimientos",
+    "fecha": "2026-04-16"
+  }
+]

@@ -1,0 +1,28 @@
+# Node / React (frontend)
+frontend/node_modules/
+.pnpm-store/
+static/cuaderno/react/
+
+# Python / Django
+venv/
+.venv/
+__pycache__/
+*.pyc
+db.sqlite3
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Datos reales exportados de la base (NUNCA versionar)
+database/
+data/backups/
+
+# Backups y logs fuera del repo
+backups/
+logs/
+*.log
+
+# Reportes de rotación de PINs (contienen PINs nuevos, no versionar)
+PINs_NUEVOS_*.txt
